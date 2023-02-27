@@ -51,7 +51,6 @@ class Calculator extends Component {
     this.setState({
       firstNumber: updatedFirstNumber,
       secondNumber: updatedSecondNumber,
-      sum: updatedFirstNumber.value + updatedSecondNumber.value || 0,
     });
 
     if (updatedFirstNumber.error || updatedSecondNumber.error) {

@@ -27,9 +27,10 @@ class UsersTable extends Component {
 
   render() {
     const { users, loading } = this.state;
-    const usersTable = loading ? (
-      <BeatLoader color='#353a40' />
-    ) : (
+
+    if (loading) return <BeatLoader color='#353a40' />;
+
+    const usersTable = (
       <table>
         <thead>
           <tr>
@@ -51,6 +52,7 @@ class UsersTable extends Component {
         </tbody>
       </table>
     );
+
     return (
       <div>
         <h1>Users table</h1>
