@@ -11,17 +11,10 @@ class UsersTable extends Component {
 
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/users').then((res) => {
-      const fetchedUsers = [];
-      for (let key in res.data) {
-        fetchedUsers.push({
-          ...res.data[key],
-          id: key,
-        });
-        this.setState({
-          users: fetchedUsers,
-          loading: false,
-        });
-      }
+      this.setState({
+        users: res.data,
+        loading: false,
+      });
     });
   }
 
